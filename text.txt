@@ -1,0 +1,82 @@
+APP directory is the most important directory
+-http
+-models
+this 2 are the common sub folder will use in App directory
+
+CONFIG directory dont need to change anything
+
+DATABASE directory -> migrations sub-folder is where you create database
+DATABASE directory -> seeders sub-folder contains classes use for unit testing for the database
+
+PUBLIC directory dont need to change anything
+
+RESOURCES directory- where you can put the css, js and views where is the html file that use blade template
+
+ROUTES directory- all routes that will make
+-web.php  where you can register web routes for your application
+
+STORAGE directory dont need to change anything it contains cache
+
+
+
+"UserController" is the name of the controller that you will make
+and it needs to be camelcase
+
+BASIC CONTROLLER
+command:
+  php artisan make:controller ControllerName
+
+RESOURCE CONTROLLER
+command:
+  php artisan make:controller ControllerName --resource
+
+
+CREATE TABLE IN DATABASE
+command: 
+  php artisan make:migration create_students_table
+
+after creating a column in VSCODE
+command:
+  php artisan migrate 
+
+
+ONE LINER command
+create controller and create model
+command:
+  php artisan make:controller ControllerName --resource --model=modelname
+
+TO DECLARE VARIABLE
+{{variable}}
+
+REQUEST
+command: 
+  php artisan make:request FileName
+
+
+
+STEPS ON CREATING LARAVEL
+1. Create laravel app thru laragon(quickapp) or composer
+
+2. Setup Database Credentials in .env file
+
+(3 and 4 can be done vice versa)
+3. Create table using migration (command: php artisan make:migration create_tablename_table)
+
+4. Open the migration file that created and add a necessary collumn since the default is id and timstamp only, and AFTER creating a column write this command to create the database (command: php artisan migrate)
+
+5. Setup controller(command: php artisan make:controller ControllerName --resource) or create controller and model (command: php artisan make:controller ControllerName --resource --model=modelname)
+
+6. Check the model file that has been created and check the protected $fillable variable. Located in app folder under models sub-folder
+
+7.Create resource route in web.php under the routes folder.
+
+8. Setup the views on the resources folder under the views folder. (Views are the template)
+
+//OPTIONAL if you dont have development serve
+9. php artisan serve
+
+
+If the function is within the class its called "METHOD"
+
+TO USE THE class
+classname::methodname
